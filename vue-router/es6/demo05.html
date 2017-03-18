@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+    <h1>Hello App!</h1>
+    <p>
+        <router-link :to="{name:'user',params:{userId:123}}">Go to 123</router-link>
+        <router-link to="/user/123">Go to 123</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+</div>
+<script src="../es5/demo05.js"></script>
+</body>
+</html>

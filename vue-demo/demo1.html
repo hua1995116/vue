@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		{{aa}}
+	</div>
+	<div id="app-2">
+		<span v-bind:title="message"></span>
+		asdsa
+	</div>
+	<div id="app-3">
+		<p>{{message}}</p>
+		<button v-on:click="reverseMessage">hhe</button>
+	</div>
+	<div id="app-4">
+		<ul>
+			<todo-item v-for="item in list" v-bind:todo="item"></todo-item>
+		</ul>	
+	</div>
+<script src="vue.js"></script>
+<script>
+	var app = new Vue({
+		el:"#app",
+		data:{
+			aa:"hello vue"
+		}
+	});
+
+	var app2 = new Vue({
+		el:"#app-2",
+		data:{
+			message:"you" + new Date()
+		}
+	});
+
+	var app3 = new Vue({
+		el:"#app-3",
+		data:{
+			message:"hellow vue.js"
+		},
+		methods:{
+			reverseMessage:function(){
+				this.message = this.message.split('').reverse().join('');
+			}
+		}
+	});
+
+	Vue.component('todo-item',{
+		props:['todo'],
+		template:'<li>{{todo.text}}</li>'
+	});
+
+	var app3 = new Vue({
+		el:"#app-4",
+		data:{
+			list:[
+				{text:'d111'},
+				{text:'d222'},
+				{text:'d333'}
+			]
+		}
+	})
+</script>
+</body>
+</html>

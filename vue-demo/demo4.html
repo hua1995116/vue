@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app-4">
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text }}
+			</li>
+		</ol>
+	</div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+	var app4 = new Vue({
+		el:"#app-4",
+		data:{
+			todos:[
+				{text:"学习1"},
+				{text:"学习2"},
+				{text:"学习3"}
+			]
+		}
+	})
+</script>
+</html>
