@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            width: 100px;
+        }
+        li{
+            display: inline-block;
+            list-style:none;
+            width: 20px;
+            height:20px;
+            text-align:center;
+            line-height:20px;
+            border:1px solid #ddd;
+        }
+        .flip-list-move {
+            transition: transform 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+<div id="flip-list-demo" class="demo">
+    <button v-on:click="shuffle">Shuffle</button>
+    <transition-group name="flip-list" tag="ul">
+        <li v-for="item in items" :key="item.key">
+            {{ item.data }}
+        </li>
+    </transition-group>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+<script src="http://cdn.bootcss.com/vue/2.2.2/vue.js"></script>
+<script>
+    new Vue({
+        el: '#flip-list-demo',
+        data: {
+            items: [{
+                data:1,
+                key:Math.random() * 1
+            },{
+                data:2,
+                key:Math.random() * 1
+            },{
+                data:3,
+                key:Math.random() * 1
+            },{
+                data:4,
+                key:Math.random() * 1
+            },{
+                data:5,
+                key:Math.random() * 1
+            },{
+                data:6,
+                key:Math.random() * 1
+            },{
+                data:7,
+                key:Math.random() * 1
+            },{
+                data:8,
+                key:Math.random() * 1
+            },{
+                data:9,
+                key:Math.random() * 1
+            },{
+                data:10,
+                key:Math.random() * 1
+            },{
+                data:11,
+                key:Math.random() * 1
+            },{
+                data:12,
+                key:Math.random() * 1
+            },{
+                data:13,
+                key:Math.random() * 1
+            },{
+                data:14,
+                key:Math.random() * 1
+            },{
+                data:15,
+                key:Math.random() * 1
+            },{
+                data:16,
+                key:Math.random() * 1
+            }]
+        },
+        methods: {
+            shuffle: function () {
+                this.items = _.shuffle(this.items)
+            }
+        }
+    })
+</script>
+</body>
+</html>
